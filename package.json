@@ -1,0 +1,23 @@
+{
+  "name": "dasun",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "postinstall": "bower install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/r2fresh/dasun.git"
+  },
+  "author": "r2fresh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/r2fresh/dasun/issues"
+  },
+  "homepage": "https://github.com/r2fresh/dasun#readme",
+  "dependencies": {
+    "express": "^4.14.1"
+  }
+}
