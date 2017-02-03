@@ -15,5 +15,10 @@
     "src/lib/",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "TimelineJS": "^2.36.0",
+    "jquery": "^3.1.1",
+    "vis": "^4.18.1"
+  }
 }
