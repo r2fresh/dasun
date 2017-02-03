@@ -1,0 +1,19 @@
+{
+  "name": "dasun",
+  "description": "",
+  "main": "App.js",
+  "authors": [
+    "r2fresh"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/r2fresh/dasun",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/lib/",
+    "test",
+    "tests"
+  ]
+}
