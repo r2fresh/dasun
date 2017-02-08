@@ -19,6 +19,11 @@
   "dependencies": {
     "TimelineJS": "^2.36.0",
     "jquery": "^3.1.1",
-    "vis": "^4.18.1"
+    "vis": "^4.18.1",
+    "moment": "^2.17.1",
+    "bootstrap": "^3.3.7",
+    "bootstrap-material-design": "^4.0.2",
+    "MDBootstrap": "^4.3.0",
+    "bootstrap-responsive-timeline": "^1.0.1"
   }
 }
