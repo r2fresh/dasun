@@ -8,7 +8,7 @@ var express = require('express');
 var app = express();
 var http = require('http');
 
-var request = require('request');
+//var request = require('request');
 
 app.get('/',function(req, res){
     res.sendFile(__dirname + '/src/index.html')
@@ -74,14 +74,14 @@ var getFunc = function(req, res) {
     //
     // x.end();
 
-    request('http://daesun2017.appspot.com' + req._parsedUrl.path,function(error, response, body){
-        if (!error) {
-            //console.log(body)
-            res.send(body)
-        } else {
-            console.log(error);
-        }
-    })
+    // request('http://daesun2017.appspot.com' + req._parsedUrl.path,function(error, response, body){
+    //     if (!error) {
+    //         //console.log(body)
+    //         res.send(body)
+    //     } else {
+    //         console.log(error);
+    //     }
+    // })
 
 }
 
