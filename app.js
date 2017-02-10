@@ -49,12 +49,12 @@ var getFunc = function(req, res) {
     // console.log(req._parsedUrl.path)
     //
     // var options = {
-    //     host: 'daesun2017.appspot.com',
+    //     host: 'http://daesun2017.appspot.com' + req._parsedUrl.path,
     //     port: 80,
-    //     path: 'req._parsedUrl.path',
+    //     //path: 'req._parsedUrl.path',
     //     method: 'GET',
     //     headers: {
-    //         accept: 'application/json'
+    //         accept: 'application/x-www-form-urlencoded'
     //         //accept:'application/xhtml+xml'
     //     }
     // };
@@ -67,21 +67,47 @@ var getFunc = function(req, res) {
     //         console.log('======================================')
     //         console.log(body)
     //         // Data reception is done, do whatever with it!
-    //         var parsed = JSON.parse(body);
-    //         res.send(parsed)
+    //         //var parsed = JSON.parse(body);
+    //         //res.send(parsed)
     //     });
     // });
     //
     // x.end();
 
-    // request('http://daesun2017.appspot.com' + req._parsedUrl.path,function(error, response, body){
+    // http.request('http://daesun2017.appspot.com' + req._parsedUrl.path,function(error, response, body){
     //     if (!error) {
-    //         //console.log(body)
+    //         console.log(body)
     //         res.send(body)
     //     } else {
     //         console.log(error);
     //     }
     // })
+
+    var options = {
+          host: 'daesun2017.appspot.com',
+          path: req._parsedUrl.path
+        };
+
+        var reqq = http.get(options, function(ress) {
+          //console.log('STATUS: ' + res.statusCode);
+          //console.log('HEADERS: ' + JSON.stringify(res.headers));
+
+          // Buffer the body entirely for processing as a whole.
+          var bodyChunks = [];
+          ress.on('data', function(chunk) {
+            // You can process streamed parts here...
+            bodyChunks.push(chunk);
+          }).on('end', function() {
+            var body = Buffer.concat(bodyChunks);
+            console.log('BODY: ' + body);
+            // ...and/or process the entire body here.
+            res.send(body)
+          })
+        });
+
+        reqq.on('error', function(e) {
+          console.log('ERROR: ' + e.message);
+        });
 
 }
 
