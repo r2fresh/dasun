@@ -1,0 +1,30 @@
+<div>
+    <script class="d-timeline-tpl" type="text/x-handlebars-template">
+    <select class="form-control {{className}}">
+        {{#dateList}}
+        <span class="timeline-label">
+            <span class="label label-primary">{{}}</span>
+        </span>
+
+        {{#userList}}
+        <div class="timeline-item">
+            <div class="timeline-point timeline-point-default">
+                <i class="fa fa-money"></i>
+            </div>
+            <div class="timeline-event">
+                <div class="timeline-heading">
+                    <h4>{{user}}</h4>
+                </div>
+                <div class="timeline-body">
+                    <p>{{출판}} : 33, 간담 : 22, 의존 : 11</p>
+                </div>
+                <div class="timeline-footer">
+                    <!-- <p class="text-right">2017-02-08T10:00:00</p> -->
+                </div>
+            </div>
+        </div>
+        {{#userList}}
+        {{/dateList}}
+    </select>
+    </script>
+</div>
