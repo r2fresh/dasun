@@ -28,7 +28,7 @@ define([
             this.timeLineListTpl     = $(Template).find('.d-timeline-tpl').html();
 
 
-            this.getKeyword();
+            //this.getKeyword();
 
         },
         getKeyword : function(){
