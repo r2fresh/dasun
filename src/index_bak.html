@@ -24,14 +24,16 @@
 
 
 
-        <link href="/lib/vis/dist/vis.css" rel="stylesheet" type="text/css" />
+        <!-- <link href="/lib/vis/dist/vis.css" rel="stylesheet" type="text/css" /> -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.18.1/vis.min.css" media="screen" title="no title" charset="utf-8">
 
         <script src="/lib/jquery/dist/jquery.js" charset="utf-8"></script>
 
         <script src="/lib/moment/moment.js" charset="utf-8"></script>
         <script src="/lib/moment/locale/ko.js" charset="utf-8"></script>
-        <script src="/lib/vis/dist/vis.js"></script>
+        <!-- <script src="/lib/vis/dist/vis.js"></script> -->
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.18.1/vis.min.js" charset="utf-8"></script>
 
 
 
@@ -41,7 +43,9 @@
     </head>
     <body>
 
-        <nav class="navbar navbar-toggleable-md navbar-dark bg-primary">
+        <div id="visualization"></div>
+
+        <!-- <nav class="navbar navbar-toggleable-md navbar-dark bg-primary">
             <div class="container">
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -74,17 +78,17 @@
                     </form>
                 </div>
             </div>
-        </nav>
+        </nav> -->
 
 
 
 
 
-        <!-- <div id="visualization"></div> -->
+
 
         <div class="container">
 
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-md-6">
                     <div class="timeline">
 
@@ -104,7 +108,7 @@
                                     <p>출판 : 33, 간담 : 22, 의존 : 11</p>
                                 </div>
                                 <div class="timeline-footer">
-                                    <!-- <p class="text-right">2017-02-08T10:00:00</p> -->
+                                    <p class="text-right">2017-02-08T10:00:00</p>
                                 </div>
                             </div>
                         </div>
@@ -121,7 +125,7 @@
                                     <p>출판 : 33, 간담 : 22, 의존 : 11</p>
                                 </div>
                                 <div class="timeline-footer">
-                                    <!-- <p class="text-right">2017-02-08T10:00:00</p> -->
+                                    <p class="text-right">2017-02-08T10:00:00</p>
                                 </div>
                             </div>
                         </div>
@@ -138,7 +142,7 @@
                                     <p>출판 : 33, 간담 : 22, 의존 : 11</p>
                                 </div>
                                 <div class="timeline-footer">
-                                    <!-- <p class="text-right">2017-02-08T10:00:00</p> -->
+                                    <p class="text-right">2017-02-08T10:00:00</p>
                                 </div>
                             </div>
                         </div>
@@ -155,7 +159,7 @@
                                     <p>출판 : 33, 간담 : 22, 의존 : 11</p>
                                 </div>
                                 <div class="timeline-footer">
-                                    <!-- <p class="text-right">2017-02-08T10:00:00</p> -->
+                                    <p class="text-right">2017-02-08T10:00:00</p>
                                 </div>
                             </div>
                         </div>
@@ -180,7 +184,7 @@
                                     <p>출판 : 33, 간담 : 22, 의존 : 11</p>
                                 </div>
                                 <div class="timeline-footer">
-                                    <!-- <p class="text-right">2017-02-08T10:00:00</p> -->
+                                    <p class="text-right">2017-02-08T10:00:00</p>
                                 </div>
                             </div>
                         </div>
@@ -197,7 +201,7 @@
                                     <p>출판 : 33, 간담 : 22, 의존 : 11</p>
                                 </div>
                                 <div class="timeline-footer">
-                                    <!-- <p class="text-right">2017-02-08T10:00:00</p> -->
+                                    <p class="text-right">2017-02-08T10:00:00</p>
                                 </div>
                             </div>
                         </div>
@@ -214,7 +218,7 @@
                                     <p>출판 : 33, 간담 : 22, 의존 : 11</p>
                                 </div>
                                 <div class="timeline-footer">
-                                    <!-- <p class="text-right">2017-02-08T10:00:00</p> -->
+                                    <p class="text-right">2017-02-08T10:00:00</p>
                                 </div>
                             </div>
                         </div>
@@ -231,13 +235,13 @@
                                     <p>출판 : 33, 간담 : 22, 의존 : 11</p>
                                 </div>
                                 <div class="timeline-footer">
-                                    <!-- <p class="text-right">2017-02-08T10:00:00</p> -->
+                                    <p class="text-right">2017-02-08T10:00:00</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <div class="row">
                     <div class="col-md-6">
@@ -297,8 +301,8 @@
 
 
           var now = moment().minutes(0).seconds(0).milliseconds(0);
-          var groupCount = 3;
-          var itemCount = 20;
+          var groupCount = 6;
+          var itemCount = 6;
 
           // create a data set with groups
           var names = ['문재인', '안희정', '안철수', '이재명', '황교안', '유승민'];
@@ -309,11 +313,12 @@
 
           // create a dataset with items
           var items = new vis.DataSet();
+          var test = now.clone().add(Math.random() * 500, 'hours')
           for (var i = 0; i < itemCount; i++) {
 
-            var start = now.clone().add(Math.random() * 500, 'hours');
+            var start = test;
             console.log(start)
-            var group = Math.floor(Math.random() * groupCount);
+            var group = i%6//Math.floor(Math.random() * groupCount);
             items.add({
               id: i,
               group: group,
@@ -330,6 +335,7 @@
             groupOrder: 'content',  // groupOrder can be a property name or a sorting function
             zoomable : false,
             locale: 'ko',
+            height : '600px'
             //autoResize : false
           };
 

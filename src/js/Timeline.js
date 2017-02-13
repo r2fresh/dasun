@@ -39,7 +39,7 @@ define([
         },
         getKeywordSuccess : function(data, textStatus, jqXHR){
             var template = Handlebars.compile(this.timeLineListTpl);
-            this.$el.find('.timeline').html(template({'list':data}));
+            this.$el.find('.timeline-list').html(template({'list':data}));
         },
         getKeywordError : function(jsXHR, textStatus, errorThrown){
 
