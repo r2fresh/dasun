@@ -11,6 +11,10 @@
   <script src="/lib/handlebars/handlebars.js"></script>
 
   <script src="/lib/vis/dist/vis.min.js"></script>
+
+  <script src="/lib/moment/moment.js"></script>
+
+
   <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" >
   <link href="/lib/vis/dist/vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css">
 
@@ -53,34 +57,36 @@
 </head>
 <body>
 <div class="row">
-    <div class="col-xs-1">
+    <div class="col-xs-1 left_el displayNone">
         <button id="left"> < </button>
     </div>
-    <div class="col-xs-11">
+    <div class="col-xs-12 left_body">
         <div id="visualization"></div>
     </div>
 </div>
 
+<div class="_keyword_list">
 
-
-<button id="add">add</button>
+</div>
 
 <script type="text/javascript">
 
   var container = document.getElementById('visualization');
 
+  var kkk = [
+    {start: new Date(2010,8,4,9,0,0), content: '<div class="title" data-index="0">문재인</div><div>김동근,이민향,송민정</div>'},
+    {start: new Date(2010,8,4,9,0,0), content: '<div class="title" data-index="1">문재인</div><div>김동근,이민향,송민정</div>'},
+    {start: new Date(2010,8,4,9,0,0), content: '<div class="title" data-index="2">문재인</div><div>김동근,이민향,송민정</div>'},
+    {start: new Date(2010,8,4,12,0,0), content: '<div class="title" data-index="2">이재명</div><div>김동근,이민향,송민정</div>'},
+    {start: new Date(2010,8,4,12,0,0), content: '<div class="title" data-index="3">이재명</div><div>김동근,이민향,송민정</div>'},
+    {start: new Date(2010,8,4,12,0,0), content: '<div class="title" data-index="4">이재명</div><div>김동근,이민향,송민정</div>'},
+    {start: new Date(2010,8,4,15,0,0), content: '<div class="title" data-index="5">안희정</div><div>김동근,이민향,송민정</div>'},
+    {start: new Date(2010,8,4,15,0,0), content: '<div class="title" data-index="6">안희정</div><div>김동근,이민향,송민정</div>'},
+    {start: new Date(2010,8,4,15,0,0), content: '<div class="title" data-index="7">안희정</div><div>김동근,이민향,송민정</div>'}
+  ]
+
   // note that months are zero-based in the JavaScript Date object
-  var items = new vis.DataSet([
-    {start: new Date(2010,8,4,9,0,0), content: '<div>문재인</div><div>김동근,이민향,송민정</div>'},
-    {start: new Date(2010,8,4,9,0,0), content: '<div>문재인</div><div>김동근,이민향,송민정</div>'},
-    {start: new Date(2010,8,4,9,0,0), content: '<div>문재인</div><div>김동근,이민향,송민정</div>'},
-    {start: new Date(2010,8,4,12,0,0), content: '<div>이재명</div><div>김동근,이민향,송민정</div>'},
-    {start: new Date(2010,8,4,12,0,0), content: '<div>이재명</div><div>김동근,이민향,송민정</div>'},
-    {start: new Date(2010,8,4,12,0,0), content: '<div>이재명</div><div>김동근,이민향,송민정</div>'},
-    {start: new Date(2010,8,4,15,0,0), content: '<div>안희정</div><div>김동근,이민향,송민정</div>'},
-    {start: new Date(2010,8,4,15,0,0), content: '<div>안희정</div><div>김동근,이민향,송민정</div>'},
-    {start: new Date(2010,8,4,15,0,0), content: '<div>안희정</div><div>김동근,이민향,송민정</div>'}
-  ]);
+  var items = new vis.DataSet(kkk);
 
   var options = {
     editable: true,
@@ -96,41 +102,67 @@
       min : new Date(2010,8,4,6,0,0),
       max : new Date(2010,8,4,21,0,0),
 
+      editable : {
+          remove : false
+      }
+
   };
 
   var timeline = new vis.Timeline(container, items, options);
 
   timeline.zoomIn(0.8);
 
-  timeline.on('rangechange',function(e){
-      console.log(e)
+
+  // document.getElementById('visualization').onclick = function (event) {
+  //     var props = timeline.getEventProperties(event)
+  //     console.log($(props).find('span').val());
+  //
+  //     //items.getCustomTime(props.)
+  //   }
+
+  timeline.on('rangechanged',function(e){
+      console.log(moment(e.start).hour())
       console.log("sdfdsfs")
+
+      if(moment(e.start).hour() <= 6){
+          $('.left_el').removeClass('displayNone')
+          $('.left_body').removeClass('col-xs-12').addClass('col-xs-11')
+      } else {
+          $('.left_el').addClass('displayNone')
+           $('.left_body').removeClass('col-xs-11').addClass('col-xs-12')
+      }
   })
 
 
 
 
-  var btnLoad = document.getElementById('add');
+  var btnLoad = document.getElementById('left');
 
   function loadData(){
       //items.clear();
       items.add([
-        {start: new Date(2010,8,4,18,0,0), content: '<div>문재인2</div><div>김동근,이민향,송민정</div>'},
-        {start: new Date(2010,8,4,18,0,0), content: '<div>문재인2</div><div>김동근,이민향,송민정</div>'},
-        {start: new Date(2010,8,4,18,0,0), content: '<div>문재인2</div><div>김동근,이민향,송민정</div>'},
+        {start: new Date(2010,8,4,6,0,0), content: '<div class="title" data-index="8">문재인2</div><div>김동근,이민향,송민정</div><span>김동근,이민향,송민정</span>'},
+        {start: new Date(2010,8,4,6,0,0), content: '<div class="title" data-index="9">문재인2</div><div>김동근,이민향,송민정</div><span>김동근,이민향,송민정</span>'},
+        {start: new Date(2010,8,4,6,0,0), content: '<div class="title" data-index="10">문재인2</div><div>김동근,이민향,송민정</div><span>김동근,이민향,송민정</span>'},
       ]);
 
     // adjust the timeline window such that we see the loaded data
     //timeline.fit();
 
     timeline.setOptions({
-        max : new Date(2010,8,5,6,0,0),
+        min : new Date(2010,8,4,1,0,0),
     })
   }
 
   btnLoad.onclick = loadData
 
   //$('#visualization').removeClass('displayNone');
+
+  $('.vis-item-content').bind('click',function(e){
+      //console.log($(e.target).data('index'))
+      //console.log(kkk[$(e.target).find('.title').data('index')])
+      $('._keyword_list').html(JSON.stringify(kkk[$(e.currentTarget).find('.title').data('index')]));
+  })
 
 </script>
 
