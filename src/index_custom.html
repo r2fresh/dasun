@@ -11,6 +11,7 @@
   <script src="/lib/handlebars/handlebars.js"></script>
 
   <script src="/lib/vis/dist/vis.min.js"></script>
+  <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" >
   <link href="/lib/vis/dist/vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css">
 
   <style type="text/css">
@@ -51,13 +52,19 @@
 
 </head>
 <body>
-<h1>WK 2014</h1>
-<p style="max-width: 600px;">
-  This example demonstrates using templates to format item contents. In this case <a href="http://handlebarsjs.com">handlebars</a> is used as template engine, but you can just use your favorite template engine or manually craft HTML from the data of an item.
-</p>
-
-<div id="visualization">
+<div class="row">
+    <div class="col-xs-1">
+        <button id="left"> < </button>
+    </div>
+    <div class="col-xs-11">
+        <div id="visualization"></div>
+    </div>
 </div>
+
+
+
+<button id="add">add</button>
+
 <script type="text/javascript">
 
   var container = document.getElementById('visualization');
@@ -81,12 +88,47 @@
       item: 20,
       axis: 40
   },
+  // timeAxis : {
+  //     scale: 'day',
+  //     step : 10
+  // },
       zoomable : false,
+      min : new Date(2010,8,4,6,0,0),
+      max : new Date(2010,8,4,21,0,0),
+
   };
 
   var timeline = new vis.Timeline(container, items, options);
 
   timeline.zoomIn(0.8);
+
+  timeline.on('rangechange',function(e){
+      console.log(e)
+      console.log("sdfdsfs")
+  })
+
+
+
+
+  var btnLoad = document.getElementById('add');
+
+  function loadData(){
+      //items.clear();
+      items.add([
+        {start: new Date(2010,8,4,18,0,0), content: '<div>문재인2</div><div>김동근,이민향,송민정</div>'},
+        {start: new Date(2010,8,4,18,0,0), content: '<div>문재인2</div><div>김동근,이민향,송민정</div>'},
+        {start: new Date(2010,8,4,18,0,0), content: '<div>문재인2</div><div>김동근,이민향,송민정</div>'},
+      ]);
+
+    // adjust the timeline window such that we see the loaded data
+    //timeline.fit();
+
+    timeline.setOptions({
+        max : new Date(2010,8,5,6,0,0),
+    })
+  }
+
+  btnLoad.onclick = loadData
 
   //$('#visualization').removeClass('displayNone');
 
