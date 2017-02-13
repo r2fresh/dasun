@@ -27,6 +27,24 @@ define([
                     //     console.log(jsXHR)
                     // }
                 });
+			},
+
+			getBooks:function(option){
+                $.ajax({
+                    url: DAESUN.HOST + '/apis/books',
+                    method : 'GET',
+                    data : {'query':option.query,'display':option.display,'start':option.start},
+                    dataType : 'json',
+                    contentType:"application/json; charset=UTF-8",
+                    success : option.success,
+					error : option.error
+                    // success : function(data, textStatus, jqXHR){
+                    //     console.log(data)
+                    // },
+                    // error : function(jsXHR, textStatus, errorThrown){
+                    //     console.log(jsXHR)
+                    // }
+                });
 			}
 		}))
 	}

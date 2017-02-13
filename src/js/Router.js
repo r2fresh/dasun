@@ -2,9 +2,10 @@ define([
    'module',
    'backbone',
    'TopMenu',
-   'Timeline'
+   'Timeline',
+   'Books'
    ],
-   function(module, Backbone, TopMenu, Timeline){
+   function(module, Backbone, TopMenu, Timeline, Books){
 
 	'use strict'
 
@@ -106,6 +107,11 @@ define([
             switch(mainMenu){
                 case 'media' :
 
+                break;
+                case 'books' :
+                    Books.render();
+                    this.prevView = Books;
+                    Books.show();
                 break;
                 default :
                     Timeline.render();
