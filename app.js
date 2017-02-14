@@ -221,6 +221,10 @@ app.get('/apis/timeline', getFunc)
 
 app.get('/apis/books', getBooks)
 
+app.get('/apis/cp/group' ,getFunc)
+
+app.get('/apis/cp/daily', getFunc)
+
 app.listen((process.env.PORT || 8080), function () {
     //console.log('Example app listening on port 8080!');
 });

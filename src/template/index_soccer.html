@@ -1,0 +1,276 @@
+<html><head>
+  <title>Timeline | Templates</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <script src="/lib/jquery/dist/jquery.js" charset="utf-8"></script>
+
+  <!-- load handlebars for templating, and create a template -->
+  <script src="/lib/handlebars/handlebars.js"></script>
+  <script id="item-template" type="text/x-handlebars-template">
+    <table class="score">
+      <tr>
+        <td colspan="3" class="description">{{player1}}</td>
+      </tr>
+      <tr>
+        <td>{{keyword1}}</td>
+        <th>{{keyword2}}</th>
+        <td>{{keyword3}}</td>
+      </tr>
+      <!-- <tr>
+        <td><img src="http://flagpedia.net/data/flags/mini/{{abbr1}}.png" width="31" height="20" alt="{{abbr1}}"></td>
+        <th></th>
+        <td><img src="http://flagpedia.net/data/flags/mini/{{abbr2}}.png" width="31" height="20" alt="{{abbr2}}"></td>
+      </tr> -->
+    </table>
+  </script>
+
+  <script src="/lib/vis/dist/vis.min.js"></script>
+  <link href="/lib/vis/dist/vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css">
+
+  <style type="text/css">
+    body, html {
+      font-family: sans-serif;
+      font-size: 10pt;
+    }
+
+    .vis.timeline .item {
+      border-color: #acacac;
+      background-color: #efefef;
+      box-shadow: 5px 5px 10px rgba(128,128,128, 0.3);
+    }
+
+    table .description {
+      font-style: italic;
+    }
+
+    #visualization {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .logo {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
+    .logo img {
+      width: 120px;
+    }
+
+    .displayNone {
+        display:none!important
+    }
+  </style>
+
+
+</head>
+<body>
+<h1>WK 2014</h1>
+<p style="max-width: 600px;">
+  This example demonstrates using templates to format item contents. In this case <a href="http://handlebarsjs.com">handlebars</a> is used as template engine, but you can just use your favorite template engine or manually craft HTML from the data of an item.
+</p>
+
+<div id="visualization" class="displayNone">
+</div>
+<script type="text/javascript">
+
+
+  $('document').ready(function(e){
+      // create a handlebars template
+      var source   = document.getElementById('item-template').innerHTML;
+      var template = Handlebars.compile(document.getElementById('item-template').innerHTML);
+
+      // DOM element where the Timeline will be attached
+      var container = document.getElementById('visualization');
+
+      // Create a DataSet (allows two way data-binding)
+      var items = new vis.DataSet([
+        // round of 16
+        {
+          player1: '이재명',
+          keyword1: '김동근',
+          keyword2: '이민향',
+          keyword3: '송민정',
+        //   abbr1: 'br',
+        //   score1: '1 (명3)',
+        //   player2: 'Chile',
+        //   abbr2: 'cl',
+        //   score2: '1 (2)',
+        //   description: 'round of 16',
+          start: '2014-06-28 13:00'
+        },
+        {
+          player1: '문재인',
+          keyword1: '김동근',
+          keyword2: '이민향',
+          keyword3: '송민정',
+        //   abbr1: 'br',
+        //   score1: '1 (명3)',
+        //   player2: 'Chile',
+        //   abbr2: 'cl',
+        //   score2: '1 (2)',
+        //   description: 'round of 16',
+          start: '2014-06-28 13:00'
+        },
+        {
+          player1: '안희정',
+          keyword1: '김동근',
+          keyword2: '이민향',
+          keyword3: '송민정',
+        //   abbr1: 'br',
+        //   score1: '1 (명3)',
+        //   player2: 'Chile',
+        //   abbr2: 'cl',
+        //   score2: '1 (2)',
+        //   description: 'round of 16',
+          start: '2014-06-28 13:00'
+        },
+        {
+          player1: '황교안',
+          keyword1: '김동근',
+          keyword2: '이민향',
+          keyword3: '송민정',
+        //   abbr1: 'br',
+        //   score1: '1 (명3)',
+        //   player2: 'Chile',
+        //   abbr2: 'cl',
+        //   score2: '1 (2)',
+        //   description: 'round of 16',
+          start: '2014-06-28 13:00'
+        },
+        {
+          player1: '이재명',
+          keyword1: '김동근',
+          keyword2: '이민향',
+          keyword3: '송민정',
+        //   abbr1: 'br',
+        //   score1: '1 (명3)',
+        //   player2: 'Chile',
+        //   abbr2: 'cl',
+        //   score2: '1 (2)',
+        //   description: 'round of 16',
+          start: '2014-06-28 16:00'
+        },
+        {
+          player1: '문재인',
+          keyword1: '김동근',
+          keyword2: '이민향',
+          keyword3: '송민정',
+        //   abbr1: 'br',
+        //   score1: '1 (명3)',
+        //   player2: 'Chile',
+        //   abbr2: 'cl',
+        //   score2: '1 (2)',
+        //   description: 'round of 16',
+          start: '2014-06-28 16:00'
+        },
+        {
+          player1: '안희정',
+          keyword1: '김동근',
+          keyword2: '이민향',
+          keyword3: '송민정',
+        //   abbr1: 'br',
+        //   score1: '1 (명3)',
+        //   player2: 'Chile',
+        //   abbr2: 'cl',
+        //   score2: '1 (2)',
+        //   description: 'round of 16',
+          start: '2014-06-28 16:00'
+        },
+        {
+          player1: '황교안',
+          keyword1: '김동근',
+          keyword2: '이민향',
+          keyword3: '송민정',
+        //   abbr1: 'br',
+        //   score1: '1 (명3)',
+        //   player2: 'Chile',
+        //   abbr2: 'cl',
+        //   score2: '1 (2)',
+        //   description: 'round of 16',
+          start: '2014-06-28 16:00'
+        },
+        // {
+        //   player1: 'Brazil',
+        //   abbr1: 'br',
+        //   score1: 2,
+        //   player2: 'Colombia',
+        //   abbr2: 'co',
+        //   score2: 1,
+        //   description: 'quarter-finals',
+        //   start: '2014-07-04 17:00'
+        // },
+        // {
+        //   player1: 'Argentina',
+        //   abbr1: 'ar',
+        //   score1: 1,
+        //   player2: 'Belgium',
+        //   abbr2: 'be',
+        //   score2: 0,
+        //   description: 'quarter-finals',
+        //   start: '2014-07-05 13:00'
+        // },
+        // {
+        //   player1: 'Netherlands',
+        //   abbr1: 'nl',
+        //   score1: '0 (4)',
+        //   player2: 'Costa Rica',
+        //   abbr2: 'cr',
+        //   score2: '0 (3)',
+        //   description: 'quarter-finals',
+        //   start: '2014-07-05 17:00'
+        // },
+        //
+        // // semi-finals
+        // {
+        //   player1: 'Brazil',
+        //   abbr1: 'br',
+        //   score1: 1,
+        //   player2: 'Germany',
+        //   abbr2: 'de',
+        //   score2: 7,
+        //   description: 'semi-finals',
+        //   start: '2014-07-08 17:00'
+        // },
+        // {
+        //   player1: 'Netherlands',
+        //   abbr1: 'nl',
+        //   score1: '0 (2)',
+        //   player2: 'Argentina',
+        //   abbr2: 'ar',
+        //   score2: '0 (4)',
+        //   description: 'semi-finals',
+        //   start: '2014-07-09 17:00'
+        // },
+        //
+        // // final
+        // {
+        //   player1: 'Germany',
+        //   score1: 1,
+        //   abbr1: 'de',
+        //   player2: 'Argentina',
+        //   abbr2: 'ar',
+        //   score2: 0,
+        //   description: 'final',
+        //   start: '2014-07-13 16:00'
+        // }
+      ]);
+
+      // Configuration for the Timeline
+      var options = {
+        // specify a template for the items
+        template: template,
+        //zoomable : false,
+      };
+
+      // Create a Timeline
+      var timeline = new vis.Timeline(container, items, options);
+
+      $('#visualization').removeClass('displayNone')
+  })
+</script>
+
+</body></html>

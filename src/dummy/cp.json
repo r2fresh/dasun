@@ -1,0 +1,235 @@
+[{
+	"hwang": 76,
+	"lee": 27,
+	"nam": 20,
+	"moon": 64,
+	"hee": 87,
+	"you": 53,
+	"ahn": 37,
+	"cp": "asiae"
+}, {
+	"hwang": 3,
+	"lee": 2,
+	"nam": 1,
+	"moon": 5,
+	"hee": 5,
+	"you": 1,
+	"ahn": 1,
+	"cp": "chosun"
+}, {
+	"hwang": 95,
+	"lee": 18,
+	"nam": 13,
+	"moon": 74,
+	"hee": 60,
+	"you": 51,
+	"ahn": 30,
+	"cp": "donga"
+}, {
+	"hwang": 29,
+	"lee": 7,
+	"nam": 12,
+	"moon": 41,
+	"hee": 27,
+	"you": 21,
+	"ahn": 37,
+	"cp": "edaily"
+}, {
+	"hwang": 9,
+	"lee": 1,
+	"nam": 0,
+	"moon": 1,
+	"hee": 1,
+	"you": 1,
+	"ahn": 0,
+	"cp": "hani"
+}, {
+	"hwang": 22,
+	"lee": 5,
+	"nam": 3,
+	"moon": 13,
+	"hee": 20,
+	"you": 11,
+	"ahn": 8,
+	"cp": "heraldcorp"
+}, {
+	"hwang": 19,
+	"lee": 6,
+	"nam": 3,
+	"moon": 5,
+	"hee": 25,
+	"you": 5,
+	"ahn": 4,
+	"cp": "ichannela"
+}, {
+	"hwang": 81,
+	"lee": 25,
+	"nam": 13,
+	"moon": 81,
+	"hee": 65,
+	"you": 44,
+	"ahn": 52,
+	"cp": "joins"
+}, {
+	"hwang": 26,
+	"lee": 0,
+	"nam": 0,
+	"moon": 19,
+	"hee": 19,
+	"you": 10,
+	"ahn": 11,
+	"cp": "jtbc"
+}, {
+	"hwang": 18,
+	"lee": 4,
+	"nam": 3,
+	"moon": 16,
+	"hee": 11,
+	"you": 10,
+	"ahn": 11,
+	"cp": "khan"
+}, {
+	"hwang": 30,
+	"lee": 7,
+	"nam": 5,
+	"moon": 30,
+	"hee": 25,
+	"you": 12,
+	"ahn": 7,
+	"cp": "kmib"
+}, {
+	"hwang": 11,
+	"lee": 4,
+	"nam": 3,
+	"moon": 14,
+	"hee": 6,
+	"you": 10,
+	"ahn": 12,
+	"cp": "mbc"
+}, {
+	"hwang": 31,
+	"lee": 6,
+	"nam": 10,
+	"moon": 35,
+	"hee": 32,
+	"you": 21,
+	"ahn": 24,
+	"cp": "mbn"
+}, {
+	"hwang": 6,
+	"lee": 2,
+	"nam": 0,
+	"moon": 12,
+	"hee": 9,
+	"you": 0,
+	"ahn": 5,
+	"cp": "mk"
+}, {
+	"hwang": 18,
+	"lee": 4,
+	"nam": 9,
+	"moon": 39,
+	"hee": 31,
+	"you": 10,
+	"ahn": 25,
+	"cp": "mt"
+}, {
+	"hwang": 12,
+	"lee": 4,
+	"nam": 2,
+	"moon": 8,
+	"hee": 13,
+	"you": 6,
+	"ahn": 7,
+	"cp": "munhwa"
+}, {
+	"hwang": 21,
+	"lee": 14,
+	"nam": 7,
+	"moon": 32,
+	"hee": 40,
+	"you": 15,
+	"ahn": 19,
+	"cp": "newsis"
+}, {
+	"hwang": 16,
+	"lee": 25,
+	"nam": 4,
+	"moon": 24,
+	"hee": 23,
+	"you": 1,
+	"ahn": 7,
+	"cp": "ohmynews"
+}, {
+	"hwang": 22,
+	"lee": 12,
+	"nam": 9,
+	"moon": 39,
+	"hee": 39,
+	"you": 14,
+	"ahn": 23,
+	"cp": "sbs"
+}, {
+	"hwang": 22,
+	"lee": 5,
+	"nam": 7,
+	"moon": 28,
+	"hee": 17,
+	"you": 20,
+	"ahn": 14,
+	"cp": "sedaily"
+}, {
+	"hwang": 30,
+	"lee": 6,
+	"nam": 8,
+	"moon": 21,
+	"hee": 20,
+	"you": 12,
+	"ahn": 12,
+	"cp": "segye"
+}, {
+	"hwang": 37,
+	"lee": 13,
+	"nam": 4,
+	"moon": 28,
+	"hee": 32,
+	"you": 17,
+	"ahn": 25,
+	"cp": "seoul"
+}, {
+	"hwang": 1,
+	"lee": 0,
+	"nam": 0,
+	"moon": 2,
+	"hee": 0,
+	"you": 0,
+	"ahn": 0,
+	"cp": "sisain"
+}, {
+	"hwang": 24,
+	"lee": 1,
+	"nam": 5,
+	"moon": 30,
+	"hee": 29,
+	"you": 12,
+	"ahn": 21,
+	"cp": "tvchosun"
+}, {
+	"hwang": 12,
+	"lee": 15,
+	"nam": 13,
+	"moon": 21,
+	"hee": 37,
+	"you": 26,
+	"ahn": 17,
+	"cp": "yonhap"
+}, {
+	"hwang": 40,
+	"lee": 15,
+	"nam": 22,
+	"moon": 53,
+	"hee": 43,
+	"you": 27,
+	"ahn": 18,
+	"cp": "ytn"
+}]
