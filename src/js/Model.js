@@ -45,6 +45,15 @@ define([
                     //     console.log(jsXHR)
                     // }
                 });
+			},
+			getPressList:function(option){
+				$.ajax({
+					url: DAESUN.HOST + '/apis/cp/group',
+					type: 'GET',
+					dataType: 'json',
+					success : option.success,
+					error : option.error
+				});
 			}
 		}))
 	}
