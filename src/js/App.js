@@ -19,12 +19,17 @@ requirejs.config({
 		'Handlebars':'../lib/handlebars/handlebars',
 		'underscore':'../lib/underscore/underscore',
 		'backbone':'../lib/backbone/backbone',
+		'vis':'../lib/vis/dist/vis',
 		'common':'utils/common',
 	},
 	shim:{
 		'backbone':{
 			deps:['underscore'],
 			exports:'Backbone'
+		},
+		'vis':{
+			deps:['underscore'],
+			exports:'vis'
 		},
 		'bootstrap':{
 			deps:['jquery'],
