@@ -4,7 +4,7 @@ $(document).ready(function(){
 	//var press_url = "/dummy/cp.json";
 	var daily_url = "./apis/cp/daily";
 	//var daily_url = "/dummy/date.json";
-
+	//test
 	var press_data;
 	var total_moon=0;
 	var total_lee=0;
