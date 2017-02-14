@@ -116,6 +116,11 @@ define([
                     this.prevView = Books;
                     Books.show();
                 break;
+                case 'timeline' :
+                    Timeline.render();
+                    this.prevView = Timeline;
+                    Timeline.show();
+                break;
                 default :
                     Timeline.render();
                     this.prevView = Timeline;
