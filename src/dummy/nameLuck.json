@@ -1,0 +1,27 @@
+{
+	"list": [{
+		"candidate": "문재인",
+		"score_from": 9,
+		"score_to": 50
+	}, {
+		"candidate": "이재명",
+		"score_from": 85,
+		"score_to": 18
+	}, {
+		"candidate": "안철수",
+		"score_from": 79,
+		"score_to": 37
+	}, {
+		"candidate": "안희정",
+		"score_from": 33,
+		"score_to": 93
+	}, {
+		"candidate": "황교안",
+		"score_from": 59,
+		"score_to": 15
+	}, {
+		"candidate": "남경필",
+		"score_from": 63,
+		"score_to": 56
+	}]
+}

@@ -56,6 +56,9 @@ $(document).ready(function(){
 
 	var press_chart = c3.generate({
 		bindto: '#press_chart',
+		title: {
+		  text: '전체 언론사'
+		},
 	    data: {
 	        // iris data from R
 	        columns: total_data,
@@ -68,9 +71,13 @@ $(document).ready(function(){
 
 	$("#selectBox").change(function(){
        console.log($(this).val());
+       console.log($("#selectBox option:selected").text());
        if ($(this).val() == 'total'){
 	       	press_chart = c3.generate({
 				bindto: '#press_chart',
+				title: {
+				  text: '전체 언론사'
+				},
 			    data: {
 			        // iris data from R
 			        columns: total_data,
@@ -95,6 +102,9 @@ $(document).ready(function(){
 
 				    press_chart = c3.generate({
 						bindto: '#press_chart',
+						title: {
+						  text: $("#selectBox option:selected").text()
+						},
 					    data: {
 					        // iris data from R
 					        columns: temp_press_data,
@@ -169,10 +179,14 @@ $(document).ready(function(){
 	    },
 	    axis: {
 	        x: {
+	        	label: '날짜',
 	            type: 'timeseries',
 	            tick: {
-	                format: '%Y-%m-%d'
+	                format: '%m-%d'
 	            }
+	        },
+	        y: {
+	        	label: '언급 횟수'
 	        }
 	    }
 	});

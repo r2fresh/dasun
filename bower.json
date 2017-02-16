@@ -28,6 +28,7 @@
     "moment": "^2.17.1",
     "bootstrap-responsive-timeline": "^1.0.1",
     "vis": "^4.18.1",
-    "c3": "^0.4.11"
+    "c3": "^0.4.11",
+    "bootstrap-social": "^5.1.1"
   }
 }
