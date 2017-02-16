@@ -41,10 +41,10 @@ $(document).ready(function(){
 	}
 
 	var createNameLuck = function(nameLuckData){
-		var nameLuckData = nameLuckData
+		var nameLuckData = nameLuckData;
 
 		for(var i=0; i< nameLuckData.length; i++){
-			var userToCandidate = nameLuckData[i].candidate + ' ' + nameLuckData[i].score_to + '% 만큼 좋아해요.'
+			var userToCandidate = nameLuckData[i].candidate + ' ' + nameLuckData[i].score_to + '% 만큼 좋아해요.';
 			var updown_pic ='';
 			// var candidateToUser = nameLuckData[i].candidate + ' → ' + userName + ' ' + nameLuckData[i].score_from + '% 만큼 좋아해요.'
 			if (nameLuckData[i].candidate === '안희정')
@@ -61,43 +61,49 @@ $(document).ready(function(){
 				updown_pic = 'hwang';
 
 			if (nameLuckData[i].score_to >= 50){
-				updown_pic += '_up.jpg'
+				updown_pic += '_up.jpg';
 			} else {
-				updown_pic += '_down.jpg'
+				updown_pic += '_down.jpg';
 			}
 
 			$("#panelGroup").append(
 			            "<div class='col-xs-12 col-md-6'>"+
 			                "<div class='panel panel-default'>"+
 			                    "<div class='panel-body'>"+
-			                        // "<div class='row'>"+
-			                            "<div class='col-xs-4 text-center vcenter'>"+
-		                                    "<div class='col-xs-12'>"+
-		                                        // "<p style='font-size:30px;'><strong>"+nameLuckData[i].candidate+"</strong></p>"+
-		                                        "<span class='align-middle'><p style='font-size:20px;'><strong>"+nameLuckData[i].candidate+"</strong></p></span>"+
-		                                    "</div>"+
-			                            "</div>"+
-			                            "<div class='col-xs-4 text-center vcenter'>"+
-			                                // "<img src='/img/nameLuck_pic/"+updown_pic+"' class='img-circle'/>"+
-			                                "<img src='/img/nameLuck_pic/"+updown_pic+"' width='100px' height='100px' class='img-circle'/>"+
-			                            "</div>"+
-			                            "<div class='col-xs-4 text-center vcenter'>"+
-			                                "<p style='font-size:20px;'><strong>"+nameLuckData[i].score_to+"%</strong></p>"+
-			                            "</div>"+
-			                        // "</div>"+
+		                            "<div class='col-xs-4 text-center vcenter'>"+
+	                                    "<div class='col-xs-12'>"+
+	                                        // "<p style='font-size:30px;'><strong>"+nameLuckData[i].candidate+"</strong></p>"+
+	                                        "<span class='align-middle'><p style='font-size:20px;'><strong>"+(i+1)+"위<br>"+nameLuckData[i].candidate+"</strong></p></span>"+
+	                                    "</div>"+
+		                            "</div>"+
+		                            "<div class='col-xs-4 text-center vcenter'>"+
+		                                // "<img src='/img/nameLuck_pic/"+updown_pic+"' class='img-circle'/>"+
+		                                "<img src='/img/nameLuck_pic/"+updown_pic+"' width='100px' height='100px' class='img-circle'/>"+
+		                            "</div>"+
+		                            "<div class='col-xs-4 text-center vcenter'>"+
+		                                "<p style='font-size:20px;'><strong>"+nameLuckData[i].score_to+"%</strong></p>"+
+		                            "</div>"+
 			                    "</div>"+
 			                "</div>"+
 			            "</div>")
 		}
 	}
 
+	var justOne = false;
 	$('#buttonUserName').click(function(){
-		userName = $('#inputUserName').val()
+		$('#panelGroup').empty();
+		if(userName !== $('#inputUserName').val()){
+			userName = $('#inputUserName').val();
+			justOne = false;
+		}
 		//이름점 리스트
-		getNameLuckList();
+		if (justOne === false){
+			getNameLuckList();
+			justOne = true;
+		}
 	});
 
-	$('a').click(function(){
+	$('.snsBtnGroup > a').click(function(){
 		var sns = $(this).attr("id");
 		var url = 'www.2017daesun.com'
 		var txt = '2017 대선 닷컴을 소개합니다.';
@@ -191,8 +197,6 @@ $(document).ready(function(){
 	    }
 	}
 });
-
-
 
 /////vis.js library 사용한 버전. 별로////
 

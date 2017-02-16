@@ -22,15 +22,25 @@
     </head>
     <body>
     <p>대선후보와의 이름점 보기</p>
-    <input type="text" id='inputUserName' placeholder="내 이름 입력"><input type="submit" id="buttonUserName" value="결과보기">
+    <!-- <input type="text" id='inputUserName'  placeholder="내 이름 입력"> -->
 
-    <div class="row" id="panelGroup"></div>
+    <div class="col-xs-4">
+    <input type="text" id="inputUserName" class="form-control" placeholder="내 이름 입력" maxlength="4" required autofocus>
+    </div>
 
-    <a class="btn btn-social-icon btn-twitter" id='twitter'><span class="fa fa-twitter"></span></a>
-    <a class="btn btn-social-icon btn-facebook" id='facebook'><span class="fa fa-facebook"></span></a>
-    <a class="btn btn-social-icon btn-openid" id='kakaostory'><img src='https://dev.kakao.com/sdk/js/resources/story/icon_small.png'/></a>
-    <a class="btn btn-social-icon btn-openid" id='kakaotalk'><img src='https://dev.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png'/></a>
+    <a class="btn btn-default" id="buttonUserName">결과보기</a>
 
+    <div class="panel-group">
+        <div class="row" id="panelGroup">
+        
+        </div>
+    </div>
+    <div class='snsBtnGroup'>
+        <a class="btn btn-social-icon btn-twitter" id='twitter'><span class="fa fa-twitter"></span></a>
+        <a class="btn btn-social-icon btn-facebook" id='facebook'><span class="fa fa-facebook"></span></a>
+        <a class="btn btn-social-icon btn-openid" id='kakaostory'><img src='https://dev.kakao.com/sdk/js/resources/story/icon_small.png'/></a>
+        <a class="btn btn-social-icon btn-openid" id='kakaotalk'><img src='https://dev.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png'/></a>
+    </div>
 
     <script src="/lib/jquery/dist/jquery.js" charset="utf-8"></script>
     <!-- <script src="/lib/vis/dist/vis.js"></script>
