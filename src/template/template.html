@@ -31,4 +31,24 @@
         {{/list}}
     </script>
 
+    <script class="d-timeline2-tpl" type="text/x-handlebars-template">
+        <div class="title" data-index="8">{{player1}}</div>
+        <div>{{keyword1}}{{keyword2}}{{keyword3}}</div>
+        <span>{{keyword1}}{{keyword2}}{{keyword3}}</span>
+    </script>
+
+    <script class="d-timeline-keyword-tpl" type="text/x-handlebars-template">
+        {{#keywords}}
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">{{keyword}}</h3>
+            </div>
+            <ul class="list-group">
+                {{#news}}
+                <li class="list-group-item">{{cp}} / {{created_at}} / {{title}}</li>
+                {{/news}}
+            </ul>
+        </div>
+        {{/keywords}}
+    </script>
 </div>

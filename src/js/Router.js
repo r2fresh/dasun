@@ -3,9 +3,10 @@ define([
    'backbone',
    'TopMenu',
    'Timeline',
-   'Books'
+   'Books',
+   'MediaChart'
    ],
-   function(module, Backbone, TopMenu, Timeline, Books){
+   function(module, Backbone, TopMenu, Timeline, Books, MediaChart){
 
 	'use strict'
 
@@ -105,13 +106,20 @@ define([
             var mainMenu = guideType;
 
             switch(mainMenu){
-                case 'media' :
-
+                case 'media-chart' :
+                    MediaChart.render();
+                    this.prevView = MediaChart;
+                    MediaChart.show();
                 break;
                 case 'books' :
                     Books.render();
                     this.prevView = Books;
                     Books.show();
+                break;
+                case 'timeline' :
+                    Timeline.render();
+                    this.prevView = Timeline;
+                    Timeline.show();
                 break;
                 default :
                     Timeline.render();
